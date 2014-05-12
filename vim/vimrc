@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/syntastic'
 Plugin 'rodjek/vim-puppet'
+Plugin 'Valloric/YouCompleteMe'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo

@@ -9,3 +9,5 @@ ln -sf $HOME/config/bashrc.d/ $HOME/.bashrc.d
 ln -sf $HOME/config/tmux/tmux.conf $HOME/.tmux.conf
 
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+ln -sf $HOME/config/vim/vimrc $HOME/.vimrc
+vim +PluginInstall +qall

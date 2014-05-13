@@ -17,6 +17,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'aaronbieber/vim-quicktask'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'altercation/vim-colors-solarized'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -55,3 +56,8 @@ filetype plugin indent on    " required
 "
 " " If you want :UltiSnipsEdit to split your window.
  let g:UltiSnipsEditSplit="vertical"
+
+"Colors
+set t_Co=256
+set background=dark
+colorscheme solarized

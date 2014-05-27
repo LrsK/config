@@ -18,6 +18,7 @@ Plugin 'aaronbieber/vim-quicktask'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -37,6 +38,7 @@ Plugin 'altercation/vim-colors-solarized'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -50,12 +52,17 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
- let g:UltiSnipsExpandTrigger="<c-f>"
- let g:UltiSnipsJumpForwardTrigger="<c-b>"
- let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:UltiSnipsExpandTrigger="<c-f>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "
 " " If you want :UltiSnipsEdit to split your window.
- let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsEditSplit="vertical"
+
+let g:ycm_global_ycm_extra_conf = ''
+
+let g:syntastic_python_checkers = ['flake8']
 
 "Colors
 set t_Co=256

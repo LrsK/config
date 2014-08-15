@@ -12,12 +12,12 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/syntastic'
-Plugin 'rodjek/vim-puppet'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'aaronbieber/vim-quicktask'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'fatih/vim-go'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.

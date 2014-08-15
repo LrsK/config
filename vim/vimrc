@@ -67,6 +67,6 @@ let g:syntastic_python_checkers = ['flake8']
 "Colors
 set t_Co=256
 set background=dark
-colorscheme solarized
+colorscheme elflord
 
 set pastetoggle=<F9>

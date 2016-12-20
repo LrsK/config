@@ -48,6 +48,8 @@ fi
 
 mkdir -p $HOME/dev/go
 export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/dev/go
+export PATH=$PATH:$GOPATH/bin
 
 # Install vim-go-ide
 git clone https://github.com/farazdagi/vim-go-ide.git ~/.vim_go_runtime
@@ -68,6 +70,7 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ln -sf $HOME/config/vim/vimrc $HOME/.vimrc
 # Install pliugins through vundle
 vim +PluginInstall +qall
+vim +GoInstallBinaries +qall
 
 # Compile YCM
 cd ~/.vim/bundle/YouCompleteMe

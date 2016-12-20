@@ -57,7 +57,7 @@ sh ~/.vim_go_runtime/bin/install
 
 # Add stuff to .zshrc
 if ! grep -qe "# Added by \$HOME/config/setup.sh" "$HOME/.zshrc"; then    
-	cat zshrc.sh >> $HOME/.zshrc
+	cat bashrc.sh >> $HOME/.zshrc
 fi
 
 # bash/zsh settings

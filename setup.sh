@@ -19,12 +19,12 @@ if [ -z "$YUM" -a -z "$APT" ]; then
 fi
 
 if [ ! -z "$YUM" ]; then
-	$sudo_command $YUM install -y zsh wget git automake gcc gcc-c++ kernel-devel cmake python-devel python3-devel
+	$sudo_command $YUM install -y zsh wget git automake gcc gcc-c++ kernel-devel cmake python-devel python3-devel clang
 
 fi
 
 if [ ! -z "$APT" ]; then
-	$sudo_command $APT install -y zsh wget git build-essential cmake python-dev python3-dev
+	$sudo_command $APT install -y zsh wget git build-essential cmake python-dev python3-dev clang
 fi
 
 # Install oh-my-zsh
@@ -36,10 +36,14 @@ git clone https://github.com/tpope/vim-pathogen ~/.vim/autoload/pathogen.vim
 
 # Install Go
 GOFILE=go${GOVERSION}.linux-amd64.tar.gz
-wget https://storage.googleapis.com/golang/${GOFILE}
+if [ ! test -e ${GOFILE} ]; then
+	wget https://storage.googleapis.com/golang/${GOFILE}
+fi
 $sudo_command rm -rf /usr/local/go
 $sudo_command tar -C /usr/local -xzf ${GOFILE}
-rm go${GOVERSION}.linux-amd64.tar.gz
+if [ ! -z "$?" ]; then
+	echo "Go install failed"
+fi
 
 # Install vim-go-ide
 git clone https://github.com/farazdagi/vim-go-ide.git ~/.vim_go_runtime

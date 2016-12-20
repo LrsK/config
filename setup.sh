@@ -63,5 +63,5 @@ vim +PluginInstall +qall
 
 # Compile YCM
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer --gocode-completer
+./install.py --clang-completer --gocode-completer --system-libclang
 cd -

@@ -43,6 +43,7 @@ $sudo_command rm -rf /usr/local/go
 $sudo_command tar -C /usr/local -xzf ${GOFILE}
 if [ ! -z "$?" ]; then
 	echo "Go install failed"
+	exit 1
 fi
 
 # Install vim-go-ide

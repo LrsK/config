@@ -42,7 +42,7 @@ $sudo_command tar -C /usr/local -xzf ${GOFILE}
 rm go${GOVERSION}.linux-amd64.tar.gz
 
 # Install vim-go-ide
-git clone git@github.com:farazdagi/vim-go-ide.git ~/.vim_go_runtime
+git clone https://github.com/farazdagi/vim-go-ide.git ~/.vim_go_runtime
 sh ~/.vim_go_runtime/bin/install
 
 # Add stuff to .zshrc

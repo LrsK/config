@@ -1,3 +1,4 @@
+
 # Added by $HOME/config/setup.sh
 if [ -d $HOME/.bashrc.d ]; then
 	for x in $HOME/.bashrc.d/*; do

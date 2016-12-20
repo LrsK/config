@@ -46,19 +46,17 @@ if [ "0" -ne "$?" ]; then
 	exit 1
 fi
 
-mkdir -p $HOME/dev/go
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/dev/go
-export PATH=$PATH:$GOPATH/bin
-
-# Install vim-go-ide
-git clone https://github.com/farazdagi/vim-go-ide.git ~/.vim_go_runtime
-sh ~/.vim_go_runtime/bin/install
-
 # Add stuff to .zshrc
 if ! grep -qe "# Added by \$HOME/config/setup.sh" "$HOME/.zshrc"; then    
 	cat bashrc.sh >> $HOME/.zshrc
 fi
+
+# Use zshrc
+source $HOME/.zshrc
+
+# Install vim-go-ide
+git clone https://github.com/farazdagi/vim-go-ide.git ~/.vim_go_runtime
+sh ~/.vim_go_runtime/bin/install
 
 # bash/zsh settings
 ln -sf $HOME/config/bashrc.d/ $HOME/.bashrc.d

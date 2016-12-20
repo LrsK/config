@@ -19,12 +19,12 @@ if [ -z "$YUM" -a -z "$APT" ]; then
 fi
 
 if [ ! -z "$YUM" ]; then
-	$sudo_command $YUM install -y zsh wget git
+	$sudo_command $YUM install -y zsh wget git automake gcc gcc-c++ kernel-devel cmake python-devel python3-devel
 
 fi
 
 if [ ! -z "$APT" ]; then
-	$sudo_command $APT install -y zsh wget git
+	$sudo_command $APT install -y zsh wget git build-essential cmake python-dev python3-dev
 fi
 
 # Install oh-my-zsh
@@ -60,3 +60,8 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ln -sf $HOME/config/vim/vimrc $HOME/.vimrc
 # Install pliugins through vundle
 vim +PluginInstall +qall
+
+# Compile YCM
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer --gocode-completer
+cd -

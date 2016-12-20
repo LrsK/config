@@ -46,6 +46,10 @@ if [ "0" -ne "$?" ]; then
 	exit 1
 fi
 
+# make some symlinks
+ln -sf $HOME/config/bashrc.d/ $HOME/.bashrc.d
+ln -sf $HOME/config/tmux/tmux.conf $HOME/.tmux.conf
+
 # Add stuff to .zshrc
 if ! grep -qe "# Added by \$HOME/config/setup.sh" "$HOME/.zshrc"; then    
 	cat $HOME/config/bashrc.sh >> $HOME/.zshrc
@@ -58,10 +62,6 @@ source $HOME/.zshrc
 git clone https://github.com/farazdagi/vim-go-ide.git ~/.vim_go_runtime
 sh ~/.vim_go_runtime/bin/install
 
-# bash/zsh settings
-ln -sf $HOME/config/bashrc.d/ $HOME/.bashrc.d
-# tmux settings
-ln -sf $HOME/config/tmux/tmux.conf $HOME/.tmux.conf
 
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # vim settings

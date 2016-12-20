@@ -20,14 +20,17 @@ if [ ! -z "$YUM" ]; then
 	$sudo_command $YUM install -y zsh wget
 
 fi
+
 if [ ! -z "$APT" ]; then
-	$sudo_command $APT install -y zsh wget || true
+	$sudo_command $APT install -y zsh wget
 fi
 
+# Install oh-my-zsh
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
+# Add stuff to .zshrc
 if ! grep -qe "# Added by \$HOME/config/setup.sh" "$HOME/.zshrc"; then    
-	cat zshrc.sh >> $HOME/.bashrc
+	cat zshrc.sh >> $HOME/.zshrc
 fi
 
 # zsh setting

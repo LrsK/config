@@ -48,7 +48,7 @@ fi
 
 # Add stuff to .zshrc
 if ! grep -qe "# Added by \$HOME/config/setup.sh" "$HOME/.zshrc"; then    
-	cat bashrc.sh >> $HOME/.zshrc
+	cat $HOME/config/bashrc.sh >> $HOME/.zshrc
 fi
 
 # Use zshrc

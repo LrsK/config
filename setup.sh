@@ -46,6 +46,9 @@ if [ ! -z "$?" ]; then
 	exit 1
 fi
 
+mkdir -p $HOME/dev/go
+export PATH=$PATH:/usr/local/go/bin
+
 # Install vim-go-ide
 git clone https://github.com/farazdagi/vim-go-ide.git ~/.vim_go_runtime
 sh ~/.vim_go_runtime/bin/install

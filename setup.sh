@@ -36,12 +36,12 @@ git clone https://github.com/tpope/vim-pathogen ~/.vim/autoload/pathogen.vim
 
 # Install Go
 GOFILE=go${GOVERSION}.linux-amd64.tar.gz
-if [ ! test -e ${GOFILE} ]; then
+if [ ! -f ${GOFILE} ]; then
 	wget https://storage.googleapis.com/golang/${GOFILE}
 fi
 $sudo_command rm -rf /usr/local/go
 $sudo_command tar -C /usr/local -xzf ${GOFILE}
-if [ ! -f ]; then
+if [ ! -z "$?" ]; then
 	echo "Go install failed"
 	exit 1
 fi

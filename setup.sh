@@ -52,6 +52,7 @@ fi
 # make some symlinks
 ln -sf $HOME/config/bashrc.d/ $HOME/.bashrc.d
 ln -sf $HOME/config/tmux/tmux.conf $HOME/.tmux.conf
+ln -sf $HOME/config/eslintrc/eslinstrc $HOME/.eslintrc
 
 # Add stuff to .zshrc
 if ! grep -qe "# Added by \$HOME/config/setup.sh" "$HOME/.zshrc"; then    

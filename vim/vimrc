@@ -19,6 +19,11 @@ Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fatih/vim-go'
 Plugin 'bling/vim-airline'
+Plugin 'saltstack/salt-vim'                                                                                                                                                                                        
+Plugin 'pangloss/vim-javascript'                                                                                                                                                                                   
+Plugin 'tomasr/molokai'                                                                                                                                                                                            
+Plugin 'mxw/vim-jsx'                                                                                                                                                                                               
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,10 +53,29 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ycm_global_ycm_extra_conf = ''
 
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_javascript_checkers = ['eslint']                                                                                                                                                                   
+                                                                                                                                                                                                                   
+let g:jsx_ext_required = 0                                                                                                                                                                                         
+                                                                                                                                                                                                                   
+                                                                                                                                                                                                                   
+function s:ForbidReplace()                                                                                                                                                                                         
+    if v:insertmode isnot# 'i'                                                                                                                                                                                     
+        call feedkeys("\<Insert>", "n")                                                                                                                                                                            
+    endif                                                                                                                                                                                                          
+endfunction                                                                                                                                                                                                        
+augroup ForbidReplaceMode                                                                                                                                                                                          
+    autocmd!                                                                                                                                                                                                       
+    autocmd InsertEnter  * call s:ForbidReplace()                                                                                                                                                                  
+    autocmd InsertChange * call s:ForbidReplace()                                                                                                                                                                  
+augroup END                                                                                                                                                                                                        
+                                                                                                                                                                                                                   
+set tabstop=4                                                                                                                                                                                                      
+set shiftwidth=4                                                                                                                                                                                                   
+set expandtab                                                                                                                                                                                                      
 
 "Colors
 set t_Co=256
 set background=dark
-colorscheme elflord
+colorscheme molokai
 
 set pastetoggle=<F9>

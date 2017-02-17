@@ -77,7 +77,7 @@ vim +GoInstallBinaries +qall
 
 # Compile YCM
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer --gocode-completer --system-libclang
+./install.py --clang-completer --gocode-completer --tern-completer
 cd -
 
 # Install npm globals

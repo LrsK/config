@@ -20,6 +20,7 @@ fi
 
 if [ ! -z "$YUM" ]; then
 	$sudo_command $YUM install -y zsh curl wget git automake gcc gcc-c++ kernel-devel cmake python-devel python3-devel clang
+	$sudo_command $YUM install -y "Development tools"
 	curl --silent --location https://rpm.nodesource.com/setup_7.x | $sudo_command bash -
 	$sudo_command $YUM install -y nodejs
 fi

@@ -1,2 +1,2 @@
 export TERM="screen-256color"
-alias tmux="tmux -2"
+export PATH=~/.npm-global/bin:$PATH

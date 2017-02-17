@@ -78,3 +78,10 @@ vim +GoInstallBinaries +qall
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer --gocode-completer --system-libclang
 cd -
+
+# Install npm globals
+# First change globals dir
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+# Install global packages
+npm install -g eslint babel-eslint eslint-plugin-react

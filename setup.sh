@@ -19,12 +19,15 @@ if [ -z "$YUM" -a -z "$APT" ]; then
 fi
 
 if [ ! -z "$YUM" ]; then
-	$sudo_command $YUM install -y zsh wget git automake gcc gcc-c++ kernel-devel cmake python-devel python3-devel clang
-
+	$sudo_command $YUM install -y zsh curl wget git automake gcc gcc-c++ kernel-devel cmake python-devel python3-devel clang
+	curl --silent --location https://rpm.nodesource.com/setup_7.x | $sudo_command bash -
+	$sudo_command $YUM install -y nodejs
 fi
 
 if [ ! -z "$APT" ]; then
-	$sudo_command $APT install -y zsh wget git build-essential cmake python-dev python3-dev clang
+	$sudo_command $APT install -y zsh curl wget git build-essential cmake python-dev python3-dev clang
+	curl -sL https://deb.nodesource.com/setup_7x | $sudo_command -E bash -
+	$APT install -y nodejs
 fi
 
 # Install oh-my-zsh
